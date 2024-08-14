@@ -387,7 +387,7 @@ class QtArchives:
         os_name = self.os_name
         if self.target == "android" and self.version >= Version("6.7.0"):
             os_name = "all_os"
-        if self.arch == "wasm_singlethread" and self.version >= Version("6.7.0"):
+        if (self.arch == "wasm_singlethread" or self.arch == "wasm_multithread") and self.version >= Version("6.7.0"):
             os_name = "all_os"
             self.target = "wasm"
             print("sorry")
